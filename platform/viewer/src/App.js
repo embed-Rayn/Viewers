@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-
+import {getCookie, removeCookie} from "../util/cookie"
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
 
 import {
@@ -200,8 +200,11 @@ class App extends Component {
                                 service={UIModalService}
                               >
                                 <Switch>
-                                  <Route exact path="/login" component={<Login />} />
-                                  <Route path="/" component={<OHIFStandaloneViewer userManager={this._userManager}/>} />
+                                  {
+                                    getCookie(accessJwtToken) ?
+                                    <Route path="/" component={<OHIFStandaloneViewer userManager={this._userManager}/>} />
+                                    : <Route exact path="/login" component={<Login />} />
+                                  }
                                 </Switch>
                               </ModalProvider>
                             </DialogProvider>
@@ -233,8 +236,11 @@ class App extends Component {
                           service={UIModalService}
                         >
                           <Switch>
-                            <Route exact path="/login" component={Login} />
-                            <Route path="/" component={OHIFStandaloneViewer} />
+                            {
+                              getCookie(accessJwtToken) ?
+                              <Route path="/" component={<OHIFStandaloneViewer userManager={this._userManager}/>} />
+                              : <Route exact path="/login" component={<Login />} />
+                            }
                           </Switch>
                         </ModalProvider>
                       </DialogProvider>

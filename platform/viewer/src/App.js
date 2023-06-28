@@ -201,7 +201,7 @@ class App extends Component {
                               >
                                 <Switch>
                                   {
-                                    getCookie(accessJwtToken) ?
+                                    getCookie("accessJwtToken") ?
                                     <Route path="/" component={<OHIFStandaloneViewer userManager={this._userManager}/>} />
                                     : <Route exact path="/login" component={<Login />} />
                                   }
@@ -237,7 +237,7 @@ class App extends Component {
                         >
                           <Switch>
                             {
-                              getCookie(accessJwtToken) ?
+                              getCookie("accessJwtToken") ?
                               <Route path="/" component={<OHIFStandaloneViewer userManager={this._userManager}/>} />
                               : <Route exact path="/login" component={<Login />} />
                             }

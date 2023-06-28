@@ -1,4 +1,4 @@
-import {setCookie, getCookie, removeCookie} from "../util/cookie"
+import {setCookie, getCookie, removeCookie} from "../utils/cookie"
 export const LoginAPI = async (LoginForm) => {
   const axios = require('axios');
   const host = 'http://grk-backend.medical-lab.co.kr/'

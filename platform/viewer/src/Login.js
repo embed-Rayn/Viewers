@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ViewerbaseDragDropContext } from '@ohif/ui';
 import { withRouter } from 'react-router';
-import {LoginAPI} from apis
+import {LoginAPI} from 'apis'
 // import { Svg } from '@ohif/ui';
 import { useForm } from 'react-hook-form';
 import { Cookies } from 'react-cookie';

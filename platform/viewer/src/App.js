@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import {getCookie, removeCookie} from "../util/cookie"
+import {getCookie, removeCookie} from "./utils/cookie"
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
 
 import {
